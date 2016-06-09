@@ -57,6 +57,7 @@
 
 <script src="./Visual_Resume_files/onready.js"></script>
 <script src="./Visual_Resume_files/loadPresentation.js"></script>
+<script type="text/javascript" src="./Visual_Resume_files/jquery-1.7.1.min.js"></script>
 <script>
 ready(function() {
     if (document.getElementById('launched-placeholder'))
@@ -71,7 +72,23 @@ ready(function() {
         document.querySelector(".hint").innerHTML = 
             "<p>Tap on the left or right to navigate</p>";
     }
+   
+    window.addEventListener('impress:stepenter',function(){
+    	$('#step-1.active #Welcome').addClass('animated bounceInLeft');
+        $('#step-1.active #Ename').addClass('animated shake');
+        $('#step-1.active #Title').addClass('animated bounceInLeft');
+        $('#step-1.active #Introd').addClass('animated bounceInLeft');
+        $('#step-1.active #Fwpic').addClass('animated bounceInRight');
+    });
+	window.addEventListener('impress:stepleave',function(){
+	    $('#step-1.past #Welcome').removeClass('animated bounceInLeft');
+		$('#step-1.past #Ename').removeClass('animated shake');
+        $('#step-1.past #Title').removeClass('animated bounceInLeft');
+        $('#step-1.active #Introd').removeClass('animated bounceInLeft');
+        $('#step-1.active #Fwpic').removeClass('animated bounceInRight');
+    });
 });
+
 </script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -103,11 +120,28 @@ border-radius:25px;
 			font-size: large;
      }
 
+     #Welcome {
+			animation-duration: 1s;
+			animation-delay: 0;
+			animation-iteration-count: 1;
+		}
+
       #Ename {
-			animation-duration: 3s;
+			animation-duration: 1s;
 			animation-delay: 1s;
 			animation-iteration-count: infinite;
 		}
+	 #Title {
+		    animation-duration: 1s;
+			animation-delay: 2s;
+			animation-iteration-count: 1;
+	 }
+	 #Fwpic,#Introd{
+		    animation-duration: 2s;
+			animation-delay: 3s;
+			animation-iteration-count: 1;
+	 }
+      
 </style>
 <style>
      th {
@@ -162,11 +196,11 @@ border-radius:25px;
 			<div class="step future" data-state="strut-slide-0" data-x="6307.84" data-y="5283.84" data-scale="3" id="step-1" style="position: absolute; transform: translate(-50%, -50%) translate3d(6307.84px, 5283.84px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); transform-style: preserve-3d;">
 			<div class=" slideContainer strut-slide-0" style="width: 1024px; height: 768px;">
 			<div class="themedArea">
-			 <span style="position: absolute; font-size: 1em;top: 0px; left: 0px;">Welcome to my visual resume</span><br/>
-        <span id="Ename" class="transforms animated shake" style="position: absolute;color: blue; font-size: 3em;left: 100px;width: 600px;top: 100px;">Stephen Fu</span><br/>
-        <span class="transforms" style="position: absolute;color: green; font-size: 1em;left: 0px;top: 200px;">Senior Application Engineer</span> 
-        <img src="./Visual_Resume_files/fuwei.png" width="150" style="position: absolute;left: 570px;top: 210px;"/>
-         <span style="position: absolute;color: green; font-size: 0.8em;left: 0px;top: 255px;text-align: justify;width: 550px; ">Skilled engineering professional with 12 years working experience in semiconductor testing and Automate Test Equipment industry.<br/></span>
+			 <span id="Welcome" style="position: absolute; font-size: 1em;top: 0px; left: 0px;">Welcome to my visual resume</span><br/>
+        <span id="Ename" class="transforms " style="position: absolute;color: blue; font-size: 3em;left: 100px;width: 600px;top: 100px;">Stephen Fu</span><br/>
+        <span id="Title" class="transforms" style="position: absolute;color: green; font-size: 1em;left: 0px;top: 200px;">Senior Application Engineer</span> 
+        <img id="Fwpic" src="./Visual_Resume_files/fuwei.png" width="150" style="position: absolute;left: 570px;top: 210px;"/>
+         <span id="Introd" style="position: absolute;color: green; font-size: 0.8em;left: 0px;top: 255px;text-align: justify;width: 550px; ">Skilled engineering professional with 12 years working experience in semiconductor testing and Automate Test Equipment industry.<br/></span>
 			</div>
 			
 			</div>
