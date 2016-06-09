@@ -72,20 +72,37 @@ ready(function() {
         document.querySelector(".hint").innerHTML = 
             "<p>Tap on the left or right to navigate</p>";
     }
-   
+
     window.addEventListener('impress:stepenter',function(){
     	$('#step-1.active #Welcome').addClass('animated bounceInLeft');
         $('#step-1.active #Ename').addClass('animated shake');
         $('#step-1.active #Title').addClass('animated bounceInLeft');
         $('#step-1.active #Introd').addClass('animated bounceInLeft');
         $('#step-1.active #Fwpic').addClass('animated bounceInRight');
+        $('#step-2.active #Garden').addClass('animated rotateIn');
+        $('#step-2.active #Scity').addClass('animated bounceInLeft');
+        $('#step-10.active #St10txt').addClass('animated bounceInDown');
+        $('#step-10.active #St10name').addClass('animated bounceInLeft');
+        $('#step-10.active #St10mail').addClass('animated zoomIn');
+        $('#step-10.active #St10mobile').addClass('animated bounceInRight');
+        $('#step-10.active #St10resume').addClass('animated bounceInUp');
+        $('#step-11.active #Thank').addClass('animated rotateIn');
+
     });
 	window.addEventListener('impress:stepleave',function(){
 	    $('#step-1.past #Welcome').removeClass('animated bounceInLeft');
 		$('#step-1.past #Ename').removeClass('animated shake');
         $('#step-1.past #Title').removeClass('animated bounceInLeft');
-        $('#step-1.active #Introd').removeClass('animated bounceInLeft');
-        $('#step-1.active #Fwpic').removeClass('animated bounceInRight');
+        $('#step-1.past #Introd').removeClass('animated bounceInLeft');
+        $('#step-1.past #Fwpic').removeClass('animated bounceInRight');
+        $('#step-2.past #Garden').removeClass('animated rotateIn');
+        $('#step-2.past #Scity').removeClass('animated bounceInLeft');
+        $('#step-10.active #St10txt').removeClass('animated bounceInDown');
+        $('#step-10.active #St10name').removeClass('animated bounceInLeft');
+        $('#step-10.active #St10mail').removeClass('animated zoomIn');
+        $('#step-10.active #St10mobile').removeClass('animated bounceInRight');
+        $('#step-10.active #St10resume').removeClass('animated bounceInUp');
+        $('#step-11.active #Thank').removeClass('animated rotateIn');
     });
 });
 
@@ -139,6 +156,24 @@ border-radius:25px;
 	 #Fwpic,#Introd{
 		    animation-duration: 2s;
 			animation-delay: 3s;
+			animation-iteration-count: 1;
+	 }
+
+	 #Garden {
+            animation-duration: 3s;
+			animation-delay: 0;
+			animation-iteration-count: 1;
+	 }
+
+	 #Scity {
+            animation-duration: 2s;
+			animation-delay: 3s;
+			animation-iteration-count: 1;
+	 }
+
+	 #St10txt , #St10name, #St10mail, #St10mobile, #St10resume, #Thank {
+            animation-duration: 3s;
+			animation-delay: 1s;
 			animation-iteration-count: 1;
 	 }
       
@@ -212,8 +247,8 @@ border-radius:25px;
 			<div class=" slideContainer strut-slide-1" style="width: 1024px; height: 768px;">
 			<div class="themedArea">
 			<h3 style="width:900px;">I currently live here...</h3>
-			 <img src="./Visual_Resume_files/gardens-by-the-bay.jpg" width="900" height="500" style="position: absolute;left: 0px;top: 100px;"/>
-			  <span style="position: absolute; font-size: 0.6em;left: 0px;top: 100px;">The Garden City,The Republic of Singapore</span>
+			 <img id="Garden" src="./Visual_Resume_files/gardens-by-the-bay.jpg" width="900" height="500" style="position: absolute;left: 0px;top: 100px;"/>
+			  <span id="Scity" style="position: absolute; font-size: 0.6em;left: 0px;top: 100px;">The Garden City,The Republic of Singapore</span>
 			</div>
 			
 			</div>
@@ -628,13 +663,13 @@ collapse;padding:2px 2px">Fix Version/s</th>
 			<div class="step future" data-state="strut-slide-9" data-x="-136.53333333333333" data-y="5283.84" data-scale="3" id="step-10" style="position: absolute; transform: translate(-50%, -50%) translate3d(-136.533px, 5283.84px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); transform-style: preserve-3d;">
 			<div class=" slideContainer strut-slide-9" style="width: 1024px; height: 768px;">
 			<div class="themedArea">
-			 <p style="position: absolute;color:green; font-size: 1em;left: 100px;top: 100px;width: 900px">I'm open to all possibilities, Please contact me with application engineering opportunities.</p> 
+			 <p id="St10txt" style="position: absolute;color:green; font-size: 1em;left: 100px;top: 100px;width: 900px">I'm open to all possibilities, Please contact me with application engineering opportunities.</p> 
            <!--    <span style="position: absolute;color:green; font-size: 1em;left: 150px;top: 150px;">Please contact me with application engineering opportunities.</span>  -->
 
-             <p style="position: absolute;color:blue; font-size: 1.2em;left: 400px;top: 200px;">Stephen Fu</p> 
-             <p style="position: absolute;color:blue; font-size: 1.0em;left: 300px;top: 280px;">Email: <a href=mailto:stephen.fu@advantest.com>Stephen Fu@Advantest</a></p>
-             <p style="position: absolute;color:blue; font-size: 1.0em;left: 300px;top: 330px;">Mobile: (+65) 98582178</p>
-             <p style="position: absolute;color:blue; font-size: 1.0em;left: 300px;top: 380px;">Resume pdf: <a href="/javascript:" onClick="window.open('./Visual_Resume_files/resume.html')" target="_blank">my resume detail</a></p>
+             <p id="St10name" style="position: absolute;color:blue; font-size: 1.2em;left: 400px;top: 200px;">Stephen Fu</p> 
+             <p id="St10mail" style="position: absolute;color:blue; font-size: 1.0em;left: 300px;top: 280px;">Email: <a href=mailto:stephen.fu@advantest.com>Stephen Fu@Advantest</a></p>
+             <p id="St10mobile" style="position: absolute;color:blue; font-size: 1.0em;left: 300px;top: 330px;">Mobile: (+65) 98582178</p>
+             <p id="St10resume" style="position: absolute;color:blue; font-size: 1.0em;left: 300px;top: 380px;">Resume pdf: <a href="/javascript:" onClick="window.open('./Visual_Resume_files/resume.html')" target="_blank">my resume detail</a></p>
 			</div>
 			
 			</div>
@@ -645,7 +680,7 @@ collapse;padding:2px 2px">Fix Version/s</th>
 			<div class="step past" data-state="strut-slide-10" data-x="12793.173333333334" data-y="5314.56" data-scale="3" id="step-11" style="position: absolute; transform: translate(-50%, -50%) translate3d(12793.2px, 5314.56px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); transform-style: preserve-3d;">
 			<div class=" slideContainer strut-slide-10" style="width: 1024px; height: 768px;">
 			<div class="themedArea">
-			 <p style="position: absolute;color:green; font-size: 1.8em;left: 200px;top: 200px;">Thank you for viewing</p>
+			 <p id="Thank" style="position: absolute;color:green; font-size: 1.8em;left: 200px;top: 200px;">Thank you for viewing</p>
 			</div>
 			
 			</div>
