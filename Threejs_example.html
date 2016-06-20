@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning 3D programing with Three js lib</title>
+</head>
+<body>
+ <h1>Welcome to my home for 3D programing with Three js lib</h1>
+   <p>Following are Three.js example for 3D..</p>
+    <script type="text/javascript">
+      var exampleList = [                                               
+{ "Chapter":"chapter-01" , "htmlName": "01-basic-skeleton" },           
+{ "Chapter":"chapter-01" , "htmlName": "02-first-scene" },              
+{ "Chapter":"chapter-01" , "htmlName": "03-materials-light" },          
+{ "Chapter":"chapter-01" , "htmlName": "04-materials-light-animation" },
+{ "Chapter":"chapter-01" , "htmlName": "05-control-gui" },              
+{ "Chapter":"chapter-01" , "htmlName": "06-screen-size-change" },       
+{ "Chapter":"chapter-02" , "htmlName": "01-basic-scene" },              
+{ "Chapter":"chapter-02" , "htmlName": "02-foggy-scene" },              
+{ "Chapter":"chapter-02" , "htmlName": "03-forced-materials" },         
+{ "Chapter":"chapter-02" , "htmlName": "04-geometries" },               
+{ "Chapter":"chapter-02" , "htmlName": "05-custom-geometry" },          
+{ "Chapter":"chapter-02" , "htmlName": "06-mesh-properties" },          
+{ "Chapter":"chapter-02" , "htmlName": "07-both-cameras" },             
+{ "Chapter":"chapter-02" , "htmlName": "08-cameras-lookat" },
+{ "Chapter":"chapter-03" , "htmlName": "01-ambient-light" },              
+{ "Chapter":"chapter-03" , "htmlName": "02-point-light" },              
+{ "Chapter":"chapter-03" , "htmlName": "03-spot-light" },         
+{ "Chapter":"chapter-03" , "htmlName": "04-directional-light" },               
+{ "Chapter":"chapter-03" , "htmlName": "05-hemisphere-light" },          
+{ "Chapter":"chapter-03" , "htmlName": "06-area-light" },          
+{ "Chapter":"chapter-03" , "htmlName": "07-lensflares" },
+{ "Chapter":"chapter-04" , "htmlName": "01-basic-mesh-material" },          
+{ "Chapter":"chapter-04" , "htmlName": "02-depth-material" },             
+{ "Chapter":"chapter-04" , "htmlName": "03-combined-material" },
+{ "Chapter":"chapter-04" , "htmlName": "04-mesh-normal-material" },              
+{ "Chapter":"chapter-04" , "htmlName": "05-mesh-face-material" },              
+{ "Chapter":"chapter-04" , "htmlName": "06-mesh-lambert-material" },         
+{ "Chapter":"chapter-04" , "htmlName": "07-mesh-phong-material" },               
+{ "Chapter":"chapter-04" , "htmlName": "08-shader-material" },          
+{ "Chapter":"chapter-04" , "htmlName": "09-line-material" },          
+{ "Chapter":"chapter-04" , "htmlName": "10-line-material-dashed" },
+{ "Chapter":"chapter-05" , "htmlName": "01-basic-2d-geometries-plane" },   
+{ "Chapter":"chapter-05" , "htmlName": "02-basic-2d-geometries-circle" },        
+{ "Chapter":"chapter-05" , "htmlName": "03-basic-2d-geometries-shape" },     
+{ "Chapter":"chapter-05" , "htmlName": "03-basic-3d-geometries-ring" },  
+{ "Chapter":"chapter-05" , "htmlName": "04-basic-3d-geometries-cube" },    
+{ "Chapter":"chapter-05" , "htmlName": "05-basic-3d-geometries-sphere" }, 
+{ "Chapter":"chapter-05" , "htmlName": "06-basic-3d-geometries-cylinder" },   
+{ "Chapter":"chapter-05" , "htmlName": "07-basic-3d-geometries-torus" },         
+{ "Chapter":"chapter-05" , "htmlName": "08-basic-3d-geometries-ring" },           
+{ "Chapter":"chapter-05" , "htmlName": "08-basic-3d-geometries-torus-knot" },    
+{ "Chapter":"chapter-05" , "htmlName": "09-basic-3d-geometries-polyhedron" },
+{ "Chapter":"chapter-06" , "htmlName": "01-advanced-3d-geometries-convex" },      
+{ "Chapter":"chapter-06" , "htmlName": "02-advanced-3d-geometries-lathe" },  
+{ "Chapter":"chapter-06" , "htmlName": "03-extrude-geometry" },   
+{ "Chapter":"chapter-06" , "htmlName": "04-extrude-tube" },    
+{ "Chapter":"chapter-06" , "htmlName": "05-extrude-svg" },    
+{ "Chapter":"chapter-06" , "htmlName": "06-parametric-geometries" },  
+{ "Chapter":"chapter-06" , "htmlName": "07-text-geometry" },
+{ "Chapter":"chapter-06" , "htmlName": "08-binary-operations" },    
+{ "Chapter":"chapter-07" , "htmlName": "01-particles" },      
+{ "Chapter":"chapter-07" , "htmlName": "02-particles-webgl" },
+{ "Chapter":"chapter-07" , "htmlName": "03-basic-point-cloud" },
+{ "Chapter":"chapter-07" , "htmlName": "04-program-based-sprites" }, 
+{ "Chapter":"chapter-07" , "htmlName": "05a-program-based-point-cloud-webgl" },  
+{ "Chapter":"chapter-07" , "htmlName": "05b-program-based-sprites-webgl" },              
+{ "Chapter":"chapter-07" , "htmlName": "06-rainy-scene" },                  
+{ "Chapter":"chapter-07" , "htmlName": "07-snowy-scene" },                   
+{ "Chapter":"chapter-07" , "htmlName": "08-sprites" },         
+{ "Chapter":"chapter-07" , "htmlName": "09-sprites-3D" },                 
+{ "Chapter":"chapter-07" , "htmlName": "10-create-particle-system-from-model" },             
+{ "Chapter":"chapter-08" , "htmlName": "01-grouping" },   
+{ "Chapter":"chapter-08" , "htmlName": "02-merging" },    
+{ "Chapter":"chapter-08" , "htmlName": "03-load-save-json-object" },    
+{ "Chapter":"chapter-08" , "htmlName": "04-load-save-json-scene" },  
+{ "Chapter":"chapter-08" , "htmlName": "05-blender-from-json" },
+{ "Chapter":"chapter-08" , "htmlName": "06-load-obj" },    
+{ "Chapter":"chapter-08" , "htmlName": "07-load-obj-mtl" },      
+{ "Chapter":"chapter-08" , "htmlName": "08-load-collada" },
+{ "Chapter":"chapter-08" , "htmlName": "09-load-stl" },
+{ "Chapter":"chapter-08" , "htmlName": "10-load-ctm" }, 
+{ "Chapter":"chapter-08" , "htmlName": "11-load-vtk" },  
+{ "Chapter":"chapter-08" , "htmlName": "12-load-pdb" },              
+{ "Chapter":"chapter-08" , "htmlName": "13-load-PLY" },                  
+{ "Chapter":"chapter-08" , "htmlName": "14-load-awd" },                   
+{ "Chapter":"chapter-08" , "htmlName": "15-load-assimp" },         
+{ "Chapter":"chapter-08" , "htmlName": "16-load-vrml" },                 
+{ "Chapter":"chapter-08" , "htmlName": "17-load-babylon" }, 
+{ "Chapter":"chapter-09" , "htmlName": "01-basic-animation" },              
+{ "Chapter":"chapter-09" , "htmlName": "02-selecting-objects" },               
+{ "Chapter":"chapter-09" , "htmlName": "03-animation-tween" }, 
+{ "Chapter":"chapter-09" , "htmlName": "04-trackball-controls-camera" },  
+{ "Chapter":"chapter-09" , "htmlName": "05-fly-controls-camera" },  
+{ "Chapter":"chapter-09" , "htmlName": "06-roll-controls-camera" },              
+{ "Chapter":"chapter-09" , "htmlName": "07-first-person-camera" },          
+{ "Chapter":"chapter-09" , "htmlName": "08-controls-orbit" },          
+{ "Chapter":"chapter-09" , "htmlName": "10-morph-targets" },              
+{ "Chapter":"chapter-09" , "htmlName": "11-morph-targets-manually" },                       
+{ "Chapter":"chapter-09" , "htmlName": "12-bones-manually" },              
+{ "Chapter":"chapter-09" , "htmlName": "13-animation-from-blender" },              
+{ "Chapter":"chapter-09" , "htmlName": "14-animation-from-collada" },              
+{ "Chapter":"chapter-09" , "htmlName": "15-animation-from-md2" },                                                                                
+{ "Chapter":"chapter-09" , "htmlName": "16-animation-from-gltf" },           
+{ "Chapter":"chapter-10" , "htmlName": "##-basic-fragment-shader" },                             
+{ "Chapter":"chapter-10" , "htmlName": "##-basic-vertex-shader" },                  
+{ "Chapter":"chapter-10" , "htmlName": "##-env-map-dynamic" },               
+{ "Chapter":"chapter-10" , "htmlName": "##-normal-obj-mtl" },                 
+{ "Chapter":"chapter-10" , "htmlName": "01-basic-texture-dds" },              
+{ "Chapter":"chapter-10" , "htmlName": "01-basic-texture-pvr" }, 
+{ "Chapter":"chapter-10" , "htmlName": "01-basic-texture-tga" },        
+{ "Chapter":"chapter-10" , "htmlName": "01-basic-texture" },        
+{ "Chapter":"chapter-10" , "htmlName": "02-bump-map" },        
+{ "Chapter":"chapter-10" , "htmlName": "03-normal-map" },  
+{ "Chapter":"chapter-10" , "htmlName": "04-light-map" },  
+{ "Chapter":"chapter-10" , "htmlName": "05-env-map-dynamic" },  
+{ "Chapter":"chapter-10" , "htmlName": "05-env-map-static" },  
+{ "Chapter":"chapter-10" , "htmlName": "06-specular-map" },  
+{ "Chapter":"chapter-10" , "htmlName": "07-uv-mapping-manual" },  
+{ "Chapter":"chapter-10" , "htmlName": "07-uv-mapping" },  
+{ "Chapter":"chapter-10" , "htmlName": "08-repeat-wrapping" },  
+{ "Chapter":"chapter-10" , "htmlName": "09-canvas-texture" },  
+{ "Chapter":"chapter-10" , "htmlName": "10-canvas-texture-bumpmap" },  
+{ "Chapter":"chapter-10" , "htmlName": "11-video-texture-alternative" },  
+{ "Chapter":"chapter-10" , "htmlName": "11-video-texture" },    
+{ "Chapter":"chapter-11" , "htmlName": "01-basic-effect-composer" },    
+{ "Chapter":"chapter-11" , "htmlName": "02-post-processing-simple-passes" },
+{ "Chapter":"chapter-11" , "htmlName": "03-glitch-pass" },    
+{ "Chapter":"chapter-11" , "htmlName": "03-post-processing-masks" },    
+{ "Chapter":"chapter-11" , "htmlName": "04-shaderpass-simple" },    
+{ "Chapter":"chapter-11" , "htmlName": "05-shaderpass-blur" },    
+{ "Chapter":"chapter-11" , "htmlName": "06-shaderpass-advanced" },    
+{ "Chapter":"chapter-11" , "htmlName": "07-shaderpass-custom" },    
+{ "Chapter":"chapter-12" , "htmlName": "01-basic-scene" },    
+{ "Chapter":"chapter-12" , "htmlName": "02-material-properties" },    
+{ "Chapter":"chapter-12" , "htmlName": "03-shapes" },    
+{ "Chapter":"chapter-12" , "htmlName": "04-constraints" },    
+{ "Chapter":"chapter-12" , "htmlName": "05-dof-constraint" },    
+{ "Chapter":"chapter-12" , "htmlName": "06-audio" },    
+{ "Chapter":"chapter-12" , "htmlName": "hinge" }              
+]; 
+    var Chapter="";
+    for(var i=0;i<exampleList.length;i++)
+    {
+       if(Chapter != exampleList[i].Chapter){
+         Chapter = exampleList[i].Chapter;
+         var chap=document.createElement("h3");
+         chap.innerHTML=Chapter;
+         document.body.appendChild(chap);
+       }
+
+       var item = document.createElement("li");
+
+       var htmltxt="<a href='./learning-threejs-master/"+exampleList[i].Chapter+"/"+exampleList[i].htmlName+".html'>"+exampleList[i].htmlName+"</a>";
+       // var htmltxt="<a href='/"+exampleList[i].htmlName+"'>"+exampleList[i].htmlName+"</a>";
+       item.innerHTML = htmltxt;
+       document.body.appendChild(item);
+    }
+    </script>
+    <a href=""></a>
+</body>
+</html>
