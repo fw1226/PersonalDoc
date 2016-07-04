@@ -60,6 +60,26 @@
 <script type="text/javascript" src="./Visual_Resume_files/jquery-1.7.1.min.js"></script>
 <script>
 ready(function() {
+      
+    if(typeof(Storage)!=="undefined")
+  {
+  if (localStorage.clickcount)
+    {
+    localStorage.clickcount=Number(localStorage.clickcount)+1;
+    }
+  else
+    {
+    localStorage.clickcount=1;
+    }
+  document.getElementById("result").innerHTML="You are the " + localStorage.clickcount + " visitor to my visual resume.";
+  }
+else
+  {
+  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
+  }
+
+
+
     if (document.getElementById('launched-placeholder'))
         loadPresentation();
 
@@ -67,7 +87,7 @@ ready(function() {
         startPres(document, window);
         impress().init();   
     }
-
+    
     if ("ontouchstart" in document.documentElement) { 
         document.querySelector(".hint").innerHTML = 
             "<p>Tap on the left or right to navigate</p>";
@@ -231,11 +251,13 @@ border-radius:25px;
 			<div class="step future" data-state="strut-slide-0" data-x="6307.84" data-y="5283.84" data-scale="3" id="step-1" style="position: absolute; transform: translate(-50%, -50%) translate3d(6307.84px, 5283.84px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); transform-style: preserve-3d;">
 			<div class=" slideContainer strut-slide-0" style="width: 1024px; height: 768px;">
 			<div class="themedArea">
-			 <span id="Welcome" style="position: absolute; font-size: 1em;top: 0px; left: 0px;">Welcome to my visual resume</span><br/>
-        <span id="Ename" class="transforms " style="position: absolute;color: blue; font-size: 3em;left: 100px;width: 600px;top: 100px;">Stephen Fu</span><br/>
-        <span id="Title" class="transforms" style="position: absolute;color: green; font-size: 1em;left: 0px;top: 200px;">Senior Application Engineer</span> 
-        <img id="Fwpic" src="./Visual_Resume_files/fuwei.png" width="150" style="position: absolute;left: 570px;top: 210px;"/>
-         <span id="Introd" style="position: absolute;color: green; font-size: 0.8em;left: 0px;top: 255px;text-align: justify;width: 550px; ">Skilled engineering professional with 12 years working experience in semiconductor testing and Automate Test Equipment industry.<br/></span>
+
+			 <span id="result" style="position: absolute; font-size: 0.5em;top: 0px; left: 0px;"></span><br/>
+			 <span id="Welcome" style="position: absolute; font-size: 1em;top: 100px; left: 0px;">Welcome to my visual resume</span><br/>
+        <span id="Ename" class="transforms " style="position: absolute;color: blue; font-size: 3em;left: 100px;width: 600px;top: 200px;">Stephen Fu</span><br/>
+        <span id="Title" class="transforms" style="position: absolute;color: green; font-size: 1em;left: 0px;top: 300px;">Senior Application Engineer</span> 
+        <img id="Fwpic" src="./Visual_Resume_files/fuwei.png" width="150" style="position: absolute;left: 570px;top: 310px;"/>
+         <span id="Introd" style="position: absolute;color: green; font-size: 0.8em;left: 0px;top: 355px;text-align: justify;width: 550px; ">Skilled engineering professional with 12 years working experience in semiconductor testing and Automate Test Equipment industry.<br/></span>
 			</div>
 			
 			</div>
